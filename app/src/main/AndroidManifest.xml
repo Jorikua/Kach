@@ -18,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="ua.kaganovych.kach.provider.WorkoutProvider"
+            android:authorities="ua.kaganovych.kach.provider"
+            android:exported="false" />
+
     </application>
 
 </manifest>
