@@ -12,6 +12,7 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:divider="@color/main_divider_color"
         android:dividerHeight="1dp"
+        android:scrollbarStyle="outsideOverlay"
         android:background="@color/main_light_black"/>
 
 </LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="days">
+        <item>Понедельник</item>
+        <item>Вторник</item>
+        <item>Среда</item>
+        <item>Четверг</item>
+        <item>Пятница</item>
+        <item>Суббота</item>
+        <item>Воскресенье</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="days_background">
+        <item>@drawable/monday</item>
+        <item>@drawable/tuesday</item>
+        <item>@drawable/wednesday</item>
+        <item>@drawable/thursday</item>
+        <item>@drawable/friday</item>
+        <item>@drawable/saturday</item>
+        <item>@drawable/sunday</item>
+        <item>@drawable/bg_timer</item>
+    </string-array>
+</resources>

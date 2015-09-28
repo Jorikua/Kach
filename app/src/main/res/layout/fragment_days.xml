@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <GridView
+        android:id="@+id/days_grid_view"
+        android:numColumns="2"
+        android:background="@android:color/darker_gray"
+        android:drawSelectorOnTop="true"
+        android:listSelector="@drawable/image_states"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:clipToPadding="false"
+        android:verticalSpacing="3dp"
+        android:horizontalSpacing="3dp"
+        android:stretchMode="columnWidth"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
