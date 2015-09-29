@@ -13,7 +13,6 @@
             android:name=".CategoriesActivity"
             android:label="@string/app_name" >
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" >
@@ -28,6 +27,11 @@
             android:name=".provider.WorkoutProvider"
             android:authorities="ua.kaganovych.kach.provider"
             android:exported="false" />
+
+        <activity
+            android:name=".DayScreenActivity"
+            android:label="@string/title_activity_day_screen" >
+        </activity>
     </application>
 
 </manifest>

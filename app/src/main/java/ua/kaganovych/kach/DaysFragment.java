@@ -3,6 +3,7 @@ package ua.kaganovych.kach;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,8 @@ public class DaysFragment extends Fragment {
                 if (position == 7) {
                     Toast.makeText(getActivity(), "Функционал не доступен", Toast.LENGTH_LONG).show();
                 }
+                String title = mAdapter.getItem(position);
+                Log.d("TAG", title);
 
             }
         });
