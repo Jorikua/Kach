@@ -28,8 +28,6 @@ public class DaysFragment extends Fragment {
         mTitleArray = getResources().getStringArray(R.array.days);
         mImageArray = new int[] {R.drawable.monday, R.drawable.tuesday, R.drawable.wednesday, R.drawable.thursday, R.drawable.friday, R.drawable.saturday, R.drawable.sunday, R.drawable.bg_timer};
         mAdapter = new DaysAdapter(getActivity(), mTitleArray, mImageArray);
-        mGridView.setDrawSelectorOnTop(true);
-        mGridView.setSelector(getResources().getDrawable(R.drawable.image_states));
         mGridView.setAdapter(mAdapter);
 
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
