@@ -7,6 +7,7 @@
     <ua.kaganovych.kach.CustomImageView
         android:id="@+id/day_background"
         android:scaleType="centerCrop"
+        android:background="@drawable/image_states"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

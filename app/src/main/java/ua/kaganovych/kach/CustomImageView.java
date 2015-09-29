@@ -21,6 +21,7 @@ public class CustomImageView extends ImageView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        setMeasuredDimension(getMeasuredWidth(), (int) (getMeasuredWidth()*0.75)); //Snap to width
+        setMeasuredDimension(getMeasuredWidth(), (int) (getMeasuredWidth()*0.75));
     }
+
 }

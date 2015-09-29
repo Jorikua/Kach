@@ -1,11 +1,14 @@
 package ua.kaganovych.kach;
 
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
         mToolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
+        Toolbar.LayoutParams params = new Toolbar.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER);
+        View toolbar_title = getLayoutInflater().inflate(R.layout.toolbar_custom_layout, null);
+        mToolbar.addView(toolbar_title,  params);
         mDaysFragment = new DaysFragment();
         mFragmentManager = getSupportFragmentManager();
         mFragmentManager.beginTransaction()
