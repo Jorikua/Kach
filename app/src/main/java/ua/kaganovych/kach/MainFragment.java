@@ -1,5 +1,6 @@
 package ua.kaganovych.kach;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,16 +12,19 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
-public class DaysFragment extends Fragment {
+public class MainFragment extends Fragment {
 
     private String[] mTitleArray;
     private int[] mImageArray;
-    private DaysAdapter mAdapter;
+    private MainAdapter mAdapter;
     private GridView mGridView;
+
+    public static final String DAY_OF_THE_WEEK = "day_of_the_week";
+    public static final String DAY_NAME = "day_name";
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_days, container, false);
 
@@ -28,17 +32,22 @@ public class DaysFragment extends Fragment {
 
         mTitleArray = getResources().getStringArray(R.array.days);
         mImageArray = new int[] {R.drawable.monday, R.drawable.tuesday, R.drawable.wednesday, R.drawable.thursday, R.drawable.friday, R.drawable.saturday, R.drawable.sunday, R.drawable.bg_timer};
-        mAdapter = new DaysAdapter(getActivity(), mTitleArray, mImageArray);
+        mAdapter = new MainAdapter(getActivity(), mTitleArray, mImageArray);
         mGridView.setAdapter(mAdapter);
 
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 7) {
-                    Toast.makeText(getActivity(), "Функционал не доступен", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), R.string.timer_toast_message, Toast.LENGTH_LONG).show();
+                } else {
+                    String title = mAdapter.getItem(position);
+                    Log.d("TAG", title + " " + id + " " + position);
+                    Intent intent = new Intent(getActivity(), DayScreenActivity.class);
+                    intent.putExtra(DAY_OF_THE_WEEK, position);
+                    intent.putExtra(DAY_NAME, title);
+                    getActivity().startActivity(intent);
                 }
-                String title = mAdapter.getItem(position);
-                Log.d("TAG", title);
 
             }
         });

@@ -9,13 +9,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private FragmentManager mFragmentManager;
-    private DaysFragment mDaysFragment;
+    private MainFragment mMainFragment;
 
     private Toolbar mToolbar;
+    private TextView mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,26 +29,24 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         Toolbar.LayoutParams params = new Toolbar.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER);
         View toolbar_title = getLayoutInflater().inflate(R.layout.toolbar_custom_layout, null);
-        mToolbar.addView(toolbar_title,  params);
-        mDaysFragment = new DaysFragment();
+        mTitle = (TextView)toolbar_title.findViewById(R.id.toolbar_title);
+        mTitle.setText(R.string.main_activity_title);
+        mToolbar.addView(toolbar_title, params);
+        mMainFragment = new MainFragment();
         mFragmentManager = getSupportFragmentManager();
         mFragmentManager.beginTransaction()
-                .replace(R.id.days_container, mDaysFragment)
+                .replace(R.id.days_container, mMainFragment)
                 .commit();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         return super.onOptionsItemSelected(item);

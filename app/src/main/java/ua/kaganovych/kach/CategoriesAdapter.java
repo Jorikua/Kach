@@ -17,10 +17,12 @@ import ua.kaganovych.kach.model.Categories;
 public class CategoriesAdapter extends ArrayAdapter<Categories> {
 
     private FragmentActivity mActivity;
+    private int mDayOfTheWeek;
 
-    public CategoriesAdapter(Context context, ArrayList<Categories> list, FragmentActivity activity) {
+    public CategoriesAdapter(Context context, ArrayList<Categories> list, FragmentActivity activity, int day_of_the_week) {
         super(context, 0, list);
         mActivity = activity;
+        mDayOfTheWeek = day_of_the_week;
     }
 
     private static class ViewHolder {

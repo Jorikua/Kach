@@ -11,31 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        android:minHeight="?android:attr/actionBarSize"
+        android:minHeight="?attr/actionBarSize"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/toolbar_back_button"
+            android:src="@drawable/ic_back"
+            style="@style/BackButton"
+            android:layout_alignParentLeft="true"/>
 
-            <ImageView
-                android:id="@+id/toolbar_back_button"
-                android:src="@drawable/ic_back"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:id="@+id/toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="КАТЕГОРИИ"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
     </android.support.v7.widget.Toolbar>
-
 
     <FrameLayout
         android:id="@+id/container"

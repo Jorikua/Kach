@@ -8,12 +8,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DaysAdapter extends ArrayAdapter<String> {
+public class MainAdapter extends ArrayAdapter<String> {
 
     private int[] mImages;
     private String[] mTitles;
 
-    public DaysAdapter(Context context, String[] titles, int[] images) {
+    public MainAdapter(Context context, String[] titles, int[] images) {
         super(context, 0, titles);
         mImages = images;
         mTitles = titles;
