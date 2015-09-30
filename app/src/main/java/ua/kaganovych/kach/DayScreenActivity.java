@@ -2,7 +2,6 @@ package ua.kaganovych.kach;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
@@ -18,7 +17,6 @@ import ua.kaganovych.kach.fragments.MainFragment;
 
 public class DayScreenActivity extends AppCompatActivity {
 
-    private FragmentManager mFragmentManager;
     private DayScreenFragment mDayScreenFragment;
 
     private Toolbar mToolbar;
@@ -51,11 +49,7 @@ public class DayScreenActivity extends AppCompatActivity {
             }
         });
         mDayScreenFragment = DayScreenFragment.newInstance(intent.getIntExtra(MainFragment.DAY_OF_THE_WEEK, 0));
-        mFragmentManager = getSupportFragmentManager();
-        mFragmentManager.beginTransaction()
-                .replace(R.id.current_day_container, mDayScreenFragment)
-                .commit();
-
+        Utils.replaceFragment(this, false, mDayScreenFragment, R.id.current_day_container);
     }
 
     @Override

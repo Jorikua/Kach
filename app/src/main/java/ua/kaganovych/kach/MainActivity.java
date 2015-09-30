@@ -1,7 +1,6 @@
 package ua.kaganovych.kach;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
@@ -15,7 +14,6 @@ import ua.kaganovych.kach.fragments.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FragmentManager mFragmentManager;
     private MainFragment mMainFragment;
 
     private Toolbar mToolbar;
@@ -35,10 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mTitle.setText(R.string.main_activity_title);
         mToolbar.addView(toolbar_title, params);
         mMainFragment = new MainFragment();
-        mFragmentManager = getSupportFragmentManager();
-        mFragmentManager.beginTransaction()
-                .replace(R.id.days_container, mMainFragment)
-                .commit();
+        Utils.replaceFragment(this, false, mMainFragment, R.id.days_container);
     }
 
     @Override

@@ -1,7 +1,6 @@
 package ua.kaganovych.kach;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
@@ -15,7 +14,6 @@ import ua.kaganovych.kach.fragments.MainFragment;
 
 public class CategoriesActivity extends AppCompatActivity {
 
-    private FragmentManager mFragmentManager;
     private CategoriesFragment mCategoriesFragment;
 
     private Toolbar mToolbar;
@@ -44,9 +42,6 @@ public class CategoriesActivity extends AppCompatActivity {
         });
 
         mCategoriesFragment = CategoriesFragment.newInstance(getIntent().getIntExtra(MainFragment.DAY_OF_THE_WEEK, 0));
-        mFragmentManager = getSupportFragmentManager();
-        mFragmentManager.beginTransaction()
-                .replace(R.id.container, mCategoriesFragment)
-                .commit();
+        Utils.replaceFragment(this, false, mCategoriesFragment, R.id.container);
     }
 }
