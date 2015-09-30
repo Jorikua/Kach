@@ -1,18 +1,23 @@
-package ua.kaganovych.kach;
+package ua.kaganovych.kach.fragments;
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.support.v4.app.LoaderManager;
+import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 
+import ua.kaganovych.kach.CategoriesActivity;
+import ua.kaganovych.kach.R;
+import ua.kaganovych.kach.adapters.DayScreenAdapter;
+import ua.kaganovych.kach.dialogs.DeletionDialogFragment;
 import ua.kaganovych.kach.provider.workout.WorkoutColumns;
-import ua.kaganovych.kach.provider.workout.WorkoutSelection;
 
 public class DayScreenFragment extends ListFragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -50,15 +55,25 @@ public class DayScreenFragment extends ListFragment implements LoaderManager.Loa
             }
         });
 
+        getLoaderManager().initLoader(0, null, this);
+
         return rootView;
     }
 
     @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        Cursor cursor = (Cursor) mAdapter.getItem(position);
+        String category = cursor.getString(cursor.getColumnIndex(WorkoutColumns.CATEGORY));
+        int itemId = cursor.getInt(cursor.getColumnIndex(WorkoutColumns._ID));
+        DeletionDialogFragment.newInstance(category, itemId).show(getActivity().getSupportFragmentManager(), "");
+    }
+
+    @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        WorkoutSelection selection = new WorkoutSelection();
         String[] projection = WorkoutColumns.ALL_COLUMNS;
-        selection.dayOfTheWeek(mDayOfTheWeek).query(getActivity().getContentResolver(), projection);
-        return null;
+        String selection = WorkoutColumns.DAY_OF_THE_WEEK + " =?";
+        String[] selectionArgs = new String[] {String.valueOf(mDayOfTheWeek)};
+        return new CursorLoader(getActivity(), WorkoutColumns.CONTENT_URI, projection, selection, selectionArgs, null);
     }
 
     @Override

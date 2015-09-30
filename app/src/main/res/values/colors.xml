@@ -6,4 +6,6 @@
     <color name="main_yellow_default">#e0b53a</color>
     <color name="main_yellow_pressed">#e0bf67</color>
     <color name="main_divider_color">#2E2E2E</color>
+
+    <color name="halftransparent_black">#33000000</color>
 </resources>

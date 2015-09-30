@@ -13,6 +13,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import ua.kaganovych.kach.fragments.DayScreenFragment;
+import ua.kaganovych.kach.fragments.MainFragment;
+
 public class DayScreenActivity extends AppCompatActivity {
 
     private FragmentManager mFragmentManager;

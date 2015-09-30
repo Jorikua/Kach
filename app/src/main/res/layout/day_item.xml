@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ua.kaganovych.kach.CustomImageView
+        <ua.kaganovych.kach.ui.CustomImageView
             android:id="@+id/day_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

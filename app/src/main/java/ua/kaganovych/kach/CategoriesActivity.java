@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import ua.kaganovych.kach.fragments.CategoriesFragment;
+import ua.kaganovych.kach.fragments.MainFragment;
+
 public class CategoriesActivity extends AppCompatActivity {
 
     private FragmentManager mFragmentManager;

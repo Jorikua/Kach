@@ -8,6 +8,7 @@
         android:id="@+id/days_grid_view"
         android:numColumns="2"
         android:background="@android:color/darker_gray"
+        android:overScrollMode="never"
         android:paddingTop="3dp"
         android:paddingBottom="3dp"
         android:clipToPadding="false"

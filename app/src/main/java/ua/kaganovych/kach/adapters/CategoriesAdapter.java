@@ -1,4 +1,4 @@
-package ua.kaganovych.kach;
+package ua.kaganovych.kach.adapters;
 
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
@@ -12,7 +12,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import ua.kaganovych.kach.R;
+import ua.kaganovych.kach.dialogs.CommonDialogFragment;
 import ua.kaganovych.kach.model.Categories;
+import ua.kaganovych.kach.provider.workout.WorkoutContentValues;
 
 public class CategoriesAdapter extends ArrayAdapter<Categories> {
 
@@ -56,7 +59,11 @@ public class CategoriesAdapter extends ArrayAdapter<Categories> {
         viewHolder.mAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Category: " + item.getName(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "Added: " + item.getName() + " Day: " + mDayOfTheWeek, Toast.LENGTH_SHORT).show();
+                WorkoutContentValues cv = new WorkoutContentValues();
+                cv.putCategory(item.getName());
+                cv.putDayOfTheWeek(mDayOfTheWeek);
+                cv.insert(getContext().getContentResolver());
             }
         });
 

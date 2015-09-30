@@ -1,4 +1,4 @@
-package ua.kaganovych.kach;
+package ua.kaganovych.kach.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -12,6 +12,8 @@ import java.util.List;
 
 import retrofit.Callback;
 import retrofit.Response;
+import ua.kaganovych.kach.adapters.CategoriesAdapter;
+import ua.kaganovych.kach.R;
 import ua.kaganovych.kach.api.ApiClient;
 import ua.kaganovych.kach.model.Categories;
 import ua.kaganovych.kach.model.Result;

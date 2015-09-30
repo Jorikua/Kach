@@ -1,4 +1,4 @@
-package ua.kaganovych.kach;
+package ua.kaganovych.kach.adapters;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
+import ua.kaganovych.kach.R;
 import ua.kaganovych.kach.provider.workout.WorkoutColumns;
 
 public class DayScreenAdapter extends CursorAdapter{

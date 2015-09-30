@@ -1,4 +1,4 @@
-package ua.kaganovych.kach;
+package ua.kaganovych.kach.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import ua.kaganovych.kach.R;
 
 public class MainAdapter extends ArrayAdapter<String> {
 

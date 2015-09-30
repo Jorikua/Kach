@@ -1,4 +1,4 @@
-package ua.kaganovych.kach;
+package ua.kaganovych.kach.ui;
 
 import android.content.Context;
 import android.util.AttributeSet;
